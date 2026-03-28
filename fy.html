@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>F.Y. TOUS SERVICES — Commerce · Services · Innovation</title>
+<meta name="description" content="Entreprise polyvalente au service du développement économique local et régional.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:root{--p:#1b5e20;--pl:#35783a;--pd:#17501b;--s:#d4a853;--pr:27,94,32;--sr:212,168,83;}
+*{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;color:#1a1a2e;overflow-x:hidden;}
+.fd{font-family:'Playfair Display',serif;}
+img{max-width:100%;height:auto;}
+
+/* ══ NAVBAR ══ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s ease;padding:22px 0;}
+#nav.scrolled{background:var(--p)!important;padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,.35);}
+.nl{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-.5px;}
+.nl em{color:var(--s);font-style:normal;}
+.na{color:rgba(255,255,255,.82);font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:color .2s;position:relative;padding-bottom:3px;}
+.na::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--s);transition:width .3s;}
+.na:hover{color:#fff;}.na:hover::after{width:100%;}
+.nb{background:var(--s);color:#1a1a2e;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.8rem;display:inline-flex;align-items:center;gap:6px;transition:all .3s;white-space:nowrap;border:2px solid var(--s);}
+.nb:hover{background:transparent;color:var(--s);transform:translateY(-2px);box-shadow:0 6px 20px rgba(var(--sr),.4);}
+.mm{display:none;position:fixed;inset:0;background:var(--p);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+.mm.open{display:flex;}
+.hbg{display:none;cursor:pointer;color:#fff;font-size:26px;background:none;border:none;}
+@media(max-width:768px){.hbg{display:block!important;}.nd{display:none!important;}.nbt{display:none!important;}}
+
+/* ══ HERO ══ */
+#accueil{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hbg2{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;animation:hzoom 20s ease-in-out infinite alternate;}
+@keyframes hzoom{from{transform:scale(1);}to{transform:scale(1.07);}}
+.hov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--pr),.92) 0%,rgba(0,0,0,.7) 55%,rgba(var(--pr),.8) 100%);}
+/* Particles */
+.ptc{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.pt{position:absolute;border-radius:50%;background:rgba(var(--sr),.45);animation:pfloat linear infinite;}
+@keyframes pfloat{0%{transform:translateY(110vh) rotate(0);opacity:0;}10%{opacity:1;}90%{opacity:.8;}100%{transform:translateY(-5vh) rotate(540deg);opacity:0;}}
+/* Floating shapes */
+.hshape{position:absolute;border-radius:50%;opacity:.06;animation:hshapeA ease-in-out infinite alternate;}
+@keyframes hshapeA{from{transform:translate(0,0) scale(1);}to{transform:translate(20px,-20px) scale(1.1);}}
+.hcnt{position:relative;z-index:10;text-align:center;max-width:860px;padding:0 24px;}
+.hey{display:inline-flex;align-items:center;gap:7px;background:rgba(var(--sr),.15);border:1px solid rgba(var(--sr),.45);color:var(--s);padding:7px 20px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:24px;animation:fdup 1s ease .15s both;}
+.htt{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:18px;animation:fdup 1s ease .35s both;}
+.htt em{color:var(--s);font-style:italic;}
+.hsb{font-size:clamp(.95rem,1.7vw,1.18rem);color:rgba(255,255,255,.88);margin-bottom:14px;font-weight:500;animation:fdup 1s ease .5s both;}
+.hdsc{font-size:.9rem;color:rgba(255,255,255,.68);max-width:560px;margin:0 auto 34px;line-height:1.8;animation:fdup 1s ease .62s both;}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fdup 1s ease .74s both;}
+.b1{background:var(--s);color:#1a1a2e;padding:14px 30px;border-radius:50px;font-weight:800;font-size:.88rem;display:inline-flex;align-items:center;gap:7px;transition:all .3s;border:2px solid var(--s);}
+.b1:hover{background:transparent;color:var(--s);transform:translateY(-3px);box-shadow:0 12px 35px rgba(var(--sr),.5);}
+.b2{background:transparent;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:7px;border:2px solid rgba(255,255,255,.45);transition:all .3s;}
+.b2:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-3px);}
+/* Scroll indicator */
+.hscr{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.5);animation:bnc 2.2s ease-in-out infinite;}
+.hscr span{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+@keyframes bnc{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(9px);}}
+/* Decorative bar */
+.dbar{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--p),var(--s),var(--p));}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fdup{from{opacity:0;transform:translateY(35px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease;}
+.fade-in.vis{opacity:1;transform:translateY(0);}
+
+/* ══ SECTION HEADER ══ */
+.ey{display:inline-block;background:linear-gradient(90deg,rgba(var(--pr),.1),rgba(var(--sr),.1));border:1px solid rgba(var(--pr),.2);color:var(--p);padding:5px 18px;border-radius:50px;font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;}
+.eyw{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--s);padding:5px 18px;border-radius:50px;font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;}
+.st{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;color:#1a1a2e;margin-bottom:14px;line-height:1.2;}
+.stw{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.2;}
+.sdi{width:52px;height:4px;background:linear-gradient(90deg,var(--p),var(--s));border-radius:2px;margin:0 auto 18px;}
+.sdil{width:52px;height:4px;background:linear-gradient(90deg,var(--s),transparent);border-radius:2px;margin-bottom:18px;}
+
+/* ══ PRESENTATION ══ */
+.pc{background:#fff;border-radius:20px;padding:36px 28px;border:1px solid rgba(0,0,0,.06);transition:all .4s cubic-bezier(.175,.885,.32,1.275);position:relative;overflow:hidden;}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--p),var(--s));transform:scaleX(0);transition:transform .4s;}
+.pc:hover{transform:translateY(-9px);box-shadow:0 24px 60px rgba(0,0,0,.1);}
+.pc:hover::before{transform:scaleX(1);}
+.pci{width:58px;height:58px;border-radius:14px;background:linear-gradient(135deg,var(--p),var(--pl));display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;margin-bottom:18px;}
+
+/* ══ SECTORS ══ */
+.sc{background:#fff;border-radius:18px;padding:28px 22px;transition:all .4s cubic-bezier(.175,.885,.32,1.275);border:1px solid rgba(0,0,0,.06);position:relative;overflow:hidden;}
+.sc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--pr),.03),rgba(var(--sr),.06));opacity:0;transition:opacity .3s;}
+.sc:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 26px 60px rgba(0,0,0,.11);}
+.sc:hover::after{opacity:1;}
+.sc-ico{width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,var(--p),var(--pl));display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;margin-bottom:18px;transition:transform .3s;}
+.sc:hover .sc-ico{transform:rotate(-6deg) scale(1.1);}
+.sc-t{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px;}
+.sc-d{font-size:.84rem;color:#6b7280;line-height:1.75;margin-bottom:14px;}
+.sc-tag{display:inline-block;background:linear-gradient(90deg,rgba(var(--pr),.1),rgba(var(--sr),.1));border:1px solid rgba(var(--pr),.2);color:var(--p);padding:4px 14px;border-radius:50px;font-size:.68rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+
+/* ══ VALUES ══ */
+.val-sec{background:var(--p);position:relative;overflow:hidden;}
+.val-sec::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at center,rgba(255,255,255,.06) 0%,transparent 65%);animation:rot 28s linear infinite;}
+@keyframes rot{to{transform:rotate(360deg);}}
+.vc{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 24px;text-align:center;transition:all .35s;position:relative;z-index:1;}
+.vc:hover{background:rgba(255,255,255,.14);transform:translateY(-7px);box-shadow:0 24px 50px rgba(0,0,0,.2);}
+.vc-i{width:68px;height:68px;border-radius:50%;background:rgba(var(--sr),.18);border:2px solid rgba(var(--sr),.38);display:flex;align-items:center;justify-content:center;color:var(--s);font-size:26px;margin:0 auto 18px;transition:all .3s;}
+.vc:hover .vc-i{background:rgba(var(--sr),.28);transform:scale(1.12) rotate(-6deg);}
+.vc h3{color:#fff;font-size:1.05rem;font-weight:700;margin-bottom:9px;}
+.vc p{color:rgba(255,255,255,.7);font-size:.84rem;line-height:1.75;}
+
+/* ══ STATS ══ */
+.stc{text-align:center;padding:38px 18px;background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,.06);transition:all .3s;position:relative;overflow:hidden;}
+.stc::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--p),var(--s));transform:scaleX(0);transition:transform .4s;}
+.stc:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.08);}
+.stc:hover::before{transform:scaleX(1);}
+.st-n{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:700;background:linear-gradient(135deg,var(--p),var(--s));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:9px;}
+.st-l{font-size:.8rem;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.6px;}
+
+/* ══ TESTIMONIALS ══ */
+.ts-sec{background:linear-gradient(135deg,#f8f9fa,#fff);position:relative;overflow:hidden;}
+.ts-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:linear-gradient(135deg,rgba(var(--pr),.05),rgba(var(--sr),.05));pointer-events:none;}
+.ts-wrap{position:relative;overflow:hidden;}
+.ts-slider{display:flex;transition:transform .5s cubic-bezier(.25,.46,.45,.94);}
+.ts-slide{min-width:calc(33.333% - 16px);margin:0 8px;}
+.ts-card{background:#fff;border-radius:20px;padding:36px 28px;box-shadow:0 8px 40px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);height:100%;position:relative;transition:all .3s;}
+.ts-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.1);}
+.ts-q{font-size:4rem;line-height:1;color:var(--s);opacity:.3;margin-bottom:10px;font-family:'Playfair Display',serif;}
+.ts-stars{color:var(--s);font-size:1.1rem;margin-bottom:14px;letter-spacing:2px;}
+.ts-txt{font-size:.9rem;color:#4b5563;line-height:1.8;font-style:italic;margin-bottom:22px;flex:1;}
+.ts-auth{display:flex;align-items:center;gap:14px;}
+.ts-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--s));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:800;flex-shrink:0;}
+.ts-name{font-weight:700;color:#1a1a2e;font-size:.92rem;}
+.ts-role{font-size:.78rem;color:#9ca3af;margin-top:2px;}
+/* Slider controls */
+.ts-dots{display:flex;justify-content:center;gap:8px;margin-top:28px;}
+.ts-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);cursor:pointer;transition:all .3s;}
+.ts-dot.active{width:28px;border-radius:4px;background:var(--p);}
+.ts-nav{display:flex;gap:10px;}
+.ts-btn{width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#1a1a2e;transition:all .3s;}
+.ts-btn:hover{background:var(--p);color:#fff;border-color:var(--p);}
+@media(max-width:900px){.ts-slide{min-width:calc(50% - 16px);}}
+@media(max-width:640px){.ts-slide{min-width:calc(100% - 16px);}}
+
+/* ══ GALLERY ══ */
+.gl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.gl-item{position:relative;overflow:hidden;border-radius:14px;cursor:pointer;aspect-ratio:4/3;}
+.gl-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.gl-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--pr),.75),rgba(0,0,0,.5));opacity:0;display:flex;align-items:center;justify-content:center;transition:all .4s ease;}
+.gl-ic{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;transform:scale(0.7);transition:transform .4s;}
+.gl-item:hover img{transform:scale(1.08);}
+.gl-item:hover .gl-ov{opacity:1;}
+.gl-item:hover .gl-ic{transform:scale(1);}
+@media(max-width:640px){.gl-grid{grid-template-columns:repeat(2,1fr);}}
+/* Lightbox */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:10000;align-items:center;justify-content:center;}
+.lb.open{display:flex;}
+.lb-img{max-width:90vw;max-height:90vh;border-radius:12px;object-fit:contain;}
+.lb-cl{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;opacity:.7;transition:opacity .2s;}
+.lb-cl:hover{opacity:1;}
+
+/* ══ CONTACT ══ */
+.cf{background:#fff;border-radius:24px;padding:46px;box-shadow:0 20px 80px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);}
+.ci{background:var(--p);border-radius:24px;padding:40px;}
+.il{display:block;font-size:.73rem;font-weight:700;color:#374151;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
+.inf,.insel,.inta{width:100%;padding:13px 16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'Montserrat',sans-serif;font-size:.88rem;color:#1a1a2e;outline:none;transition:all .3s;background:#fafafa;}
+.inf:focus,.insel:focus,.inta:focus{border-color:var(--p);background:#fff;box-shadow:0 0 0 4px rgba(var(--pr),.08);}
+.inta{resize:vertical;min-height:110px;}
+.ef{border-color:#ef4444!important;}
+.em{color:#ef4444;font-size:.7rem;margin-top:3px;display:none;}
+.bsub{width:100%;padding:15px;background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;border:none;border-radius:12px;font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;}
+.bsub:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(var(--pr),.4);}
+.ci-row{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.ci-row:last-of-type{border-bottom:none;}
+.ci-ic{width:44px;height:44px;min-width:44px;border-radius:12px;background:rgba(var(--sr),.18);border:1px solid rgba(var(--sr),.32);display:flex;align-items:center;justify-content:center;color:var(--s);font-size:19px;}
+.ci-lb{font-size:.66rem;color:rgba(255,255,255,.42);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
+.ci-val{color:#fff;font-weight:500;font-size:.9rem;}
+.fok{display:none;text-align:center;padding:36px;}
+/* Social in contact */
+.soc-lnk{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:all .3s;}
+.soc-lnk:hover{background:var(--s);color:#1a1a2e;border-color:var(--s);}
+
+/* ══ WHATSAPP ══ */
+.wa{position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;color:#fff;font-size:27px;box-shadow:0 8px 30px rgba(37,211,102,.55);z-index:9999;transition:all .3s;animation:waP 3s ease-in-out infinite;}
+.wa:hover{transform:scale(1.15);}
+@keyframes waP{0%,100%{box-shadow:0 8px 30px rgba(37,211,102,.55);}50%{box-shadow:0 8px 50px rgba(37,211,102,.85);}}
+
+/* ══ FOOTER ══ */
+footer{background:#0a0a16;color:rgba(255,255,255,.55);}
+.fl2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;}
+.fl2 em{color:var(--s);font-style:normal;}
+.fhl{font-size:.64rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06);}
+.flnk{color:rgba(255,255,255,.45);font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:6px;transition:color .2s;text-decoration:none;margin-bottom:9px;}
+.flnk:hover{color:var(--s);}
+.flnk i{font-size:14px;color:var(--s);}
+.fcol{font-size:.8rem;color:rgba(255,255,255,.28);}
+
+@media(max-width:640px){.cf{padding:24px 16px;}.ci{padding:24px 16px;}.hbtns{flex-direction:column;align-items:center;}}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/+22890216751" target="_blank" class="wa"><i class="ri-whatsapp-line"></i></a>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" onclick="closeLB()">
+  <button class="lb-cl" onclick="closeLB()"><i class="ri-close-line"></i></button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+</div>
+
+<!-- Mobile Menu -->
+<div class="mm" id="mmenu">
+  <button onclick="tmenu()" style="position:absolute;top:22px;right:22px;color:#fff;font-size:28px;background:none;border:none;cursor:pointer;"><i class="ri-close-line"></i></button>
+  <a href="#accueil" style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.1rem;text-transform:uppercase;" onclick="tmenu()">Accueil</a><a href="#secteurs" style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.1rem;text-transform:uppercase;" onclick="tmenu()">Secteurs</a><a href="#valeurs" style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.1rem;text-transform:uppercase;" onclick="tmenu()">Valeurs</a><a href="#apropos" style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.1rem;text-transform:uppercase;" onclick="tmenu()">À propos</a><a href="#galerie" style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.1rem;text-transform:uppercase;" onclick="tmenu()">Galerie</a><a href="#contact" style="color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.1rem;text-transform:uppercase;" onclick="tmenu()">Contact</a>
+  <a href="tel:90 21 67 51" class="nb" style="margin-top:10px"><i class="ri-phone-fill"></i>90 21 67 51</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <a href="#accueil" class="nl">F.Y.<em>.</em></a>
+    <div class="flex items-center gap-8 nd" style="display:flex">
+      <a href="#accueil" class="na">Accueil</a><a href="#secteurs" class="na">Secteurs</a><a href="#valeurs" class="na">Valeurs</a><a href="#apropos" class="na">À propos</a><a href="#galerie" class="na">Galerie</a><a href="#contact" class="na">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="tel:90 21 67 51" class="nb nbt"><i class="ri-phone-fill"></i>90 21 67 51</a>
+      <button class="hbg" onclick="tmenu()"><i class="ri-menu-3-line"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="accueil">
+  <div class="hbg2"></div>
+  <div class="hov"></div>
+  <!-- Floating shapes -->
+  <div class="hshape" style="width:600px;height:600px;background:var(--s);top:-200px;right:-200px;animation-duration:8s;"></div>
+  <div class="hshape" style="width:400px;height:400px;background:var(--p);bottom:-100px;left:-100px;animation-duration:12s;"></div>
+  <!-- Particles -->
+  <div class="ptc" id="ptc"></div>
+  <div class="hcnt">
+    <div class="hey"><i class="ri-map-pin-2-line"></i>LOME, Togo · Depuis 2026</div>
+    <h1 class="htt">Excellence <br><em style="font-style:italic"> Professionnalisme</em></h1>
+    <p class="hsb">F.Y. TOUS SERVICES — Votre partenaire de confiance</p>
+    <p class="hdsc">Entreprise polyvalente au service du développement économique local et régional.</p>
+    <div class="hbtns">
+      <a href="#secteurs" class="b1"><i class="ri-grid-line"></i>Nos Secteurs</a>
+      <a href="#contact" class="b2"><i class="ri-mail-send-line"></i>Nous Contacter</a>
+    </div>
+  </div>
+  <div class="hscr"><i class="ri-arrow-down-s-line" style="font-size:24px"></i><span>Découvrir</span></div>
+  <div class="dbar"></div>
+</section>
+
+<!-- PRESENTATION -->
+<section id="apropos" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <div class="ey">Qui sommes-nous</div>
+      <h2 class="st">F.Y. TOUS SERVICES</h2>
+      <div class="sdi"></div>
+      <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed text-sm">F.Y. TOUS SERVICES est une entreprise dynamique basée à LOME, Togo, spécialisée dans plusieurs domaines d'activités stratégiques. Fondée avec la vision de contribuer au développement économique de la région, notre entreprise se distingue par son professionnalisme, son intégrité et son engagement envers l'excellence.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="pc fade-in" style="transition-delay:.1s">
+        <div class="pci"><i class="ri-eye-2-line"></i></div>
+        <h3 class="fd text-xl font-bold text-gray-900 mb-3">Vision Globale</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">Une vision stratégique tournée vers l'avenir, portée par l'ambition de contribuer au développement économique durable de l'Afrique.</p>
+      </div>
+      <div class="pc fade-in" style="transition-delay:.2s">
+        <div class="pci"><i class="ri-handshake-line"></i></div>
+        <h3 class="fd text-xl font-bold text-gray-900 mb-3">Engagement</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">Un engagement ferme envers nos partenaires pour une collaboration basée sur la transparence, le respect et la haute performance.</p>
+      </div>
+      <div class="pc fade-in" style="transition-delay:.3s">
+        <div class="pci"><i class="ri-community-line"></i></div>
+        <h3 class="fd text-xl font-bold text-gray-900 mb-3">Développement Local</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">Un acteur responsable du développement communautaire, créateur d'emplois et de valeur ajoutée pour les populations locales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section id="secteurs" class="py-24" style="background:linear-gradient(150deg,#f9fafb 0%,#ffffff 100%);position:relative;">
+  <div style="position:absolute;inset:0;opacity:.4;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 fade-in">
+      <div class="ey">Nos Domaines</div>
+      <h2 class="st">Secteurs d'Activité</h2>
+      <div class="sdi"></div>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">Commerce · Services · Innovation</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="sc fade-in" style="transition-delay:0s">
+    <div class="sc-ico"><i class="ri-store-2-line"></i></div>
+    <h3 class="sc-t">Commerce general</h3>
+    <p class="sc-d">Services professionnels en commerce general.</p>
+    <span class="sc-tag">Activité</span>
+  </div>
+  <div class="sc fade-in" style="transition-delay:0.08s">
+    <div class="sc-ico"><i class="ri-ship-line"></i></div>
+    <h3 class="sc-t">Import - export</h3>
+    <p class="sc-d">Services professionnels en import - export.</p>
+    <span class="sc-tag">Activité</span>
+  </div>
+  <div class="sc fade-in" style="transition-delay:0.16s">
+    <div class="sc-ico"><i class="ri-briefcase-line"></i></div>
+    <h3 class="sc-t">Courtage d'affaires</h3>
+    <p class="sc-d">Services professionnels en courtage d'affaires.</p>
+    <span class="sc-tag">Activité</span>
+  </div>
+  <div class="sc fade-in" style="transition-delay:0.24s">
+    <div class="sc-ico"><i class="ri-building-line"></i></div>
+    <h3 class="sc-t">Immobilier</h3>
+    <p class="sc-d">Services professionnels en immobilier.</p>
+    <span class="sc-tag">Activité</span>
+  </div>
+  <div class="sc fade-in" style="transition-delay:0.32s">
+    <div class="sc-ico"><i class="ri-service-line"></i></div>
+    <h3 class="sc-t">Prestations de services</h3>
+    <p class="sc-d">Services professionnels en prestations de services.</p>
+    <span class="sc-tag">Activité</span>
+  </div></div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="valeurs" class="val-sec py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <div class="eyw">Nos Principes</div>
+      <h2 class="stw">Nos Valeurs</h2>
+      <div class="sdil mx-auto"></div>
+      <p style="color:rgba(255,255,255,.65);max-width:480px;margin:0 auto;font-size:.88rem;line-height:1.75;">L'excellence au service de votre développement</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="vc fade-in" style="transition-delay:0s">
+    <div class="vc-i"><i class="ri-shield-check-line"></i></div>
+    <h3>Intégrité</h3>
+    <p>Honnêteté et transparence dans toutes nos relations commerciales et partenariales.</p>
+  </div>
+  <div class="vc fade-in" style="transition-delay:0.1s">
+    <div class="vc-i"><i class="ri-medal-line"></i></div>
+    <h3>Excellence</h3>
+    <p>Qualité supérieure dans chaque projet, chaque livraison, chaque interaction.</p>
+  </div>
+  <div class="vc fade-in" style="transition-delay:0.2s">
+    <div class="vc-i"><i class="ri-team-line"></i></div>
+    <h3>Partenariat</h3>
+    <p>Relations durables bâties sur la confiance mutuelle et le respect réciproque.</p>
+  </div>
+  <div class="vc fade-in" style="transition-delay:0.30000000000000004s">
+    <div class="vc-i"><i class="ri-earth-line"></i></div>
+    <h3>Développement</h3>
+    <p>Contribution active au développement économique local, régional et continental.</p>
+  </div></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <div class="ey">Notre Impact</div>
+      <h2 class="st">Chiffres Clés</h2>
+      <div class="sdi"></div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="stc fade-in" style="transition-delay:0s">
+    <div class="st-n counter" data-target="10+">10+</div>
+    <div class="st-l">Années d'expérience</div>
+  </div>
+  <div class="stc fade-in" style="transition-delay:0.1s">
+    <div class="st-n counter" data-target="250+">250+</div>
+    <div class="st-l">Projets réalisés</div>
+  </div>
+  <div class="stc fade-in" style="transition-delay:0.2s">
+    <div class="st-n counter" data-target="150+">150+</div>
+    <div class="st-l">Clients satisfaits</div>
+  </div>
+  <div class="stc fade-in" style="transition-delay:0.30000000000000004s">
+    <div class="st-n counter" data-target="8">8</div>
+    <div class="st-l">Pays d'intervention</div>
+  </div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="ts-sec py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+      <div class="fade-in">
+        <div class="ey">Ils nous font confiance</div>
+        <h2 class="st mb-0">Témoignages Clients</h2>
+      </div>
+      <div class="ts-nav fade-in">
+        <button class="ts-btn" id="tsPrev" onclick="slideTest(-1)"><i class="ri-arrow-left-line"></i></button>
+        <button class="ts-btn" id="tsNext" onclick="slideTest(1)"><i class="ri-arrow-right-line"></i></button>
+      </div>
+    </div>
+    <div class="ts-wrap">
+      <div class="ts-slider" id="tsSlider">
+  <div class="ts-slide" data-idx="0">
+    <div class="ts-card">
+      <div class="ts-q"><i class="ri-double-quotes-l"></i></div>
+      <div class="ts-stars">★★★★★</div>
+      <p class="ts-txt">Un partenaire exceptionnel. Leur professionnalisme et leur réactivité ont fait toute la différence dans nos échanges commerciaux.</p>
+      <div class="ts-auth">
+        <div class="ts-av">K</div>
+        <div>
+          <div class="ts-name">Kofi Mensah</div>
+          <div class="ts-role">Directeur Général — Mensah Group</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ts-slide" data-idx="1">
+    <div class="ts-card">
+      <div class="ts-q"><i class="ri-double-quotes-l"></i></div>
+      <div class="ts-stars">★★★★★</div>
+      <p class="ts-txt">Nous travaillons ensemble depuis 3 ans. La qualité de service est constante et l'équipe est toujours disponible. Je recommande vivement.</p>
+      <div class="ts-auth">
+        <div class="ts-av">A</div>
+        <div>
+          <div class="ts-name">Aminata Diallo</div>
+          <div class="ts-role">Responsable Achats — DialloCorp SARL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ts-slide" data-idx="2">
+    <div class="ts-card">
+      <div class="ts-q"><i class="ri-double-quotes-l"></i></div>
+      <div class="ts-stars">★★★★★</div>
+      <p class="ts-txt">Des solutions adaptées à nos besoins africains. Une entreprise qui comprend notre marché et nos enjeux locaux.</p>
+      <div class="ts-auth">
+        <div class="ts-av">J</div>
+        <div>
+          <div class="ts-name">Jean-Baptiste Akoto</div>
+          <div class="ts-role">PDG — Akoto Investissements</div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+    </div>
+    <div class="ts-dots" id="tsDots"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galerie" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 fade-in">
+      <div class="ey">Visuels</div>
+      <h2 class="st">Notre Galerie</h2>
+      <div class="sdi"></div>
+      <p class="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">Découvrez nos activités et nos installations</p>
+    </div>
+    <div class="gl-grid">
+  <div class="gl-item fade-in" style="transition-delay:0s" onclick="openLB('https://images.unsplash.com/photo-1560472354-b33ff0ad4a39?auto=format&fit=crop&w=1200&q=80')">
+    <img src="https://images.unsplash.com/photo-1560472354-b33ff0ad4a39?auto=format&fit=crop&w=600&q=80" alt="Galerie 1" loading="lazy">
+    <div class="gl-ov"><div class="gl-ic"><i class="ri-zoom-in-line"></i></div></div>
+  </div>
+  <div class="gl-item fade-in" style="transition-delay:0.07s" onclick="openLB('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80')">
+    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Galerie 2" loading="lazy">
+    <div class="gl-ov"><div class="gl-ic"><i class="ri-zoom-in-line"></i></div></div>
+  </div>
+  <div class="gl-item fade-in" style="transition-delay:0.14s" onclick="openLB('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80')">
+    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Galerie 3" loading="lazy">
+    <div class="gl-ov"><div class="gl-ic"><i class="ri-zoom-in-line"></i></div></div>
+  </div>
+  <div class="gl-item fade-in" style="transition-delay:0.21000000000000002s" onclick="openLB('https://images.unsplash.com/photo-1486406046845-dec421995126?auto=format&fit=crop&w=1200&q=80')">
+    <img src="https://images.unsplash.com/photo-1486406046845-dec421995126?auto=format&fit=crop&w=600&q=80" alt="Galerie 4" loading="lazy">
+    <div class="gl-ov"><div class="gl-ic"><i class="ri-zoom-in-line"></i></div></div>
+  </div>
+  <div class="gl-item fade-in" style="transition-delay:0.28s" onclick="openLB('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Galerie 5" loading="lazy">
+    <div class="gl-ov"><div class="gl-ic"><i class="ri-zoom-in-line"></i></div></div>
+  </div>
+  <div class="gl-item fade-in" style="transition-delay:0.35000000000000003s" onclick="openLB('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80')">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Galerie 6" loading="lazy">
+    <div class="gl-ov"><div class="gl-ic"><i class="ri-zoom-in-line"></i></div></div>
+  </div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24" style="background:linear-gradient(150deg,#f9fafb,#fff);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <div class="ey">Parlons-nous</div>
+      <h2 class="st">Contactez-Nous</h2>
+      <div class="sdi"></div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+      <div class="lg:col-span-3 fade-in">
+        <div class="cf">
+          <h3 class="fd text-2xl font-bold text-gray-900 mb-8">Envoyez-nous un message</h3>
+          <form id="cFrm" onsubmit="sendF(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div><label class="il">Nom complet *</label><input type="text" class="inf" id="fn" placeholder="Votre nom"><div class="em" id="en">Champ requis</div></div>
+              <div><label class="il">Entreprise</label><input type="text" class="inf" id="fc" placeholder="Votre entreprise"></div>
+            </div>
+            <div class="mb-4"><label class="il">Téléphone *</label><input type="text" class="inf" id="fp" placeholder="Ex: +228 XX XX XX XX"><div class="em" id="ep">Champ requis</div></div>
+            <div class="mb-4"><label class="il">Secteur d'intérêt</label>
+              <select class="insel" id="fs"><option value="">Choisissez un secteur</option><option value="Commerce general">Commerce general</option><option value="Import - export">Import - export</option><option value="Courtage d'affaires">Courtage d'affaires</option><option value="Immobilier">Immobilier</option><option value="Prestations de services">Prestations de services</option></select></div>
+            <div class="mb-6"><label class="il">Message *</label><textarea class="inta" id="fm" placeholder="Décrivez votre projet ou besoin..."></textarea><div class="em" id="em2">Champ requis</div></div>
+            <button type="submit" class="bsub"><i class="ri-send-plane-2-line"></i>Envoyer le Message</button>
+          </form>
+          <div class="fok" id="fok">
+            <i class="ri-checkbox-circle-fill" style="font-size:3.5rem;color:var(--p);display:block;margin-bottom:12px;"></i>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px;">Message envoyé !</h3>
+            <p style="color:#6b7280;font-size:.88rem;">Nous vous répondrons dans les plus brefs délais.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 fade-in" style="transition-delay:.15s">
+        <div class="ci">
+          <h3 class="fd text-2xl font-bold mb-8" style="color:#fff;">Nos Coordonnées</h3>
+          <div class="ci-row"><div class="ci-ic"><i class="ri-map-pin-2-line"></i></div><div><div class="ci-lb">Adresse</div><div class="ci-val">LOME, Togo</div></div></div>
+          <div class="ci-row"><div class="ci-ic"><i class="ri-phone-line"></i></div><div><div class="ci-lb">Téléphone</div><div class="ci-val">90 21 67 51</div></div></div>
+          
+          <div class="ci-row"><div class="ci-ic" style="background:rgba(37,211,102,.18);border-color:rgba(37,211,102,.35);color:#25D366;"><i class="ri-whatsapp-line"></i></div><div><div class="ci-lb">WhatsApp</div><a href="https://wa.me/+22890216751" style="color:#25D366;font-weight:500;">+22890216751</a></div></div>
+          <div style="margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);">
+            <div class="ci-lb" style="margin-bottom:12px;">Suivez-nous</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="https://wa.me/+22890216751" target="_blank" class="soc-lnk" title="WhatsApp"><i class="ri-whatsapp-line"></i></a></div>
+          </div>
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);">
+            <p style="color:rgba(255,255,255,.5);font-size:.83rem;line-height:1.75;font-style:italic;">"L'excellence au service de votre développement"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Col 1: Brand -->
+      <div class="lg:col-span-1">
+        <div class="fl2 mb-4">F.Y.<em>.</em></div>
+        <p style="font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.42);margin-bottom:20px;">Commerce · Services · Innovation</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="https://wa.me/+22890216751" target="_blank" class="soc-lnk" title="WhatsApp"><i class="ri-whatsapp-line"></i></a></div>
+        <p style="font-size:.72rem;color:rgba(255,255,255,.25);margin-top:14px;">Fondée en 2026</p>
+      </div>
+      <!-- Col 2: Navigation -->
+      <div>
+        <div class="fhl">Navigation</div>
+        <a href="#accueil" class="flnk"><i class="ri-arrow-right-s-line"></i>Accueil</a><a href="#secteurs" class="flnk"><i class="ri-arrow-right-s-line"></i>Secteurs</a><a href="#valeurs" class="flnk"><i class="ri-arrow-right-s-line"></i>Valeurs</a><a href="#apropos" class="flnk"><i class="ri-arrow-right-s-line"></i>À propos</a><a href="#galerie" class="flnk"><i class="ri-arrow-right-s-line"></i>Galerie</a><a href="#contact" class="flnk"><i class="ri-arrow-right-s-line"></i>Contact</a>
+      </div>
+      <!-- Col 3: Services -->
+      <div>
+        <div class="fhl">Nos Secteurs</div>
+        <a href="#secteurs" class="flnk"><i class="ri-checkbox-blank-circle-line" style="font-size:8px;"></i>Commerce general</a><a href="#secteurs" class="flnk"><i class="ri-checkbox-blank-circle-line" style="font-size:8px;"></i>Import - export</a><a href="#secteurs" class="flnk"><i class="ri-checkbox-blank-circle-line" style="font-size:8px;"></i>Courtage d'affaires</a><a href="#secteurs" class="flnk"><i class="ri-checkbox-blank-circle-line" style="font-size:8px;"></i>Immobilier</a><a href="#secteurs" class="flnk"><i class="ri-checkbox-blank-circle-line" style="font-size:8px;"></i>Prestations de services</a>
+      </div>
+      <!-- Col 4: Contact -->
+      <div>
+        <div class="fhl">Contact</div>
+        <div class="flnk" style="cursor:default;"><i class="ri-map-pin-line"></i>LOME, Togo</div>
+        <a href="tel:90 21 67 51" class="flnk"><i class="ri-phone-line"></i>90 21 67 51</a>
+        
+        <a href="https://wa.me/+22890216751" target="_blank" class="flnk" style="color:#25D366;"><i class="ri-whatsapp-line" style="color:#25D366;"></i>WhatsApp</a>
+        <div style="margin-top:20px;">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:7px;background:var(--s);color:#1a1a2e;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.8rem;transition:all .3s;text-decoration:none;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <i class="ri-mail-send-line"></i> Nous écrire
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom bar -->
+    <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <div class="fcol">© 2026 <strong style="color:rgba(255,255,255,.4);">F.Y. TOUS SERVICES</strong>. Tous droits réservés.</div>
+      <div style="display:flex;align-items:center;gap:20px;">
+        <a href="#" class="fcol" style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--s)'" onmouseout="this.style.color=''">Mentions légales</a>
+        <a href="#" class="fcol" style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--s)'" onmouseout="this.style.color=''">Confidentialité</a>
+        <div class="fcol">LOME, Togo</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>70);});
+
+// Mobile menu
+function tmenu(){
+  const m=document.getElementById('mmenu');m.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+
+// Fade-in
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Counters
+function animCnt(el,tgt){
+  const num=parseInt(tgt.replace(/[^0-9]/g,''));
+  const sfx=tgt.replace(/[0-9]/g,'');
+  if(!num){el.textContent=tgt;return;}
+  let cur=0;const step=num/(1800/16);
+  const t=setInterval(()=>{cur+=step;if(cur>=num){cur=num;clearInterval(t);}el.textContent=Math.round(cur)+sfx;},16);
+}
+const cobs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting&&!x.target.dataset.done){x.target.dataset.done='1';animCnt(x.target,x.target.dataset.target);}});},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>cobs.observe(el));
+
+// Particles
+const pc=document.getElementById('ptc');
+for(let i=0;i<22;i++){
+  const p=document.createElement('div');p.className='pt';
+  const sz=Math.random()*6+2;
+  p.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+Math.random()*100+'%;bottom:-10px;animation-duration:'+(Math.random()*14+8)+'s;animation-delay:'+Math.random()*12+'s;opacity:'+(Math.random()*.5+.1);
+  pc.appendChild(p);
+}
+
+// Testimonials slider
+const slides=document.querySelectorAll('.ts-slide');
+const dotsC=document.getElementById('tsDots');
+const slider=document.getElementById('tsSlider');
+let tsIdx=0,tsPW=3,tsTotal=slides.length,tsAuto;
+
+function tsSz(){
+  const w=slider.parentElement.offsetWidth;
+  if(w<640)tsPW=1;else if(w<900)tsPW=2;else tsPW=3;
+  tsPW=Math.min(tsPW,tsTotal);
+  slides.forEach(s=>{s.style.minWidth='calc('+(100/tsPW)+'% - 16px)';});
+}
+function renderDots(){
+  const total=Math.max(1,tsTotal-tsPW+1);
+  dotsC.innerHTML=Array.from({length:total},(_,i)=>'<div class="ts-dot'+(i===0?' active':'')+'" onclick="goTest('+i+')"></div>').join('');
+}
+function goTest(idx){
+  const max=Math.max(0,tsTotal-tsPW);
+  tsIdx=Math.max(0,Math.min(idx,max));
+  const sw=slider.children[0]?.offsetWidth||300;
+  slider.style.transform='translateX(-'+(tsIdx*(sw+16))+'px)';
+  document.querySelectorAll('.ts-dot').forEach((d,i)=>d.classList.toggle('active',i===tsIdx));
+}
+function slideTest(dir){goTest(tsIdx+dir);resetAuto();}
+function resetAuto(){clearInterval(tsAuto);tsAuto=setInterval(()=>{const max=Math.max(0,tsTotal-tsPW);goTest(tsIdx<max?tsIdx+1:0);},4500);}
+window.addEventListener('resize',()=>{tsSz();goTest(tsIdx);});
+tsSz();renderDots();resetAuto();
+
+// Gallery lightbox
+function openLB(src){document.getElementById('lbImg').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+
+// Form validation
+function sendF(e){
+  e.preventDefault();let ok=true;
+  [['fn','en'],['fp','ep'],['fm','em2']].forEach(([fid,eid])=>{
+    const el=document.getElementById(fid),er=document.getElementById(eid);
+    if(!el.value.trim()){el.classList.add('ef');er.style.display='block';ok=false;}
+    else{el.classList.remove('ef');er.style.display='none';}
+  });
+  if(ok){document.getElementById('cFrm').style.display='none';document.getElementById('fok').style.display='block';}
+}
+</script>
+</body>
+</html>
